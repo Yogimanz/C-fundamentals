@@ -28,6 +28,19 @@ int main()
 	else
 		std::cout << "Element was not found." << std::endl;
 
+
+	std::cout << "Insert in following order number of elements to insert, low range and high range of random integers to add. " << std::endl;
+	int* inputs= new int[3];
+	
+	std::cin >> inputs[0];
+	std::cin >> inputs[1];
+	std::cin >> inputs[2];
+
+	mySet.insertRandRange(inputs[0], inputs[1], inputs[2]);
+	mySet.printSet();
+
+
+	delete[] inputs;
 }
 
 
