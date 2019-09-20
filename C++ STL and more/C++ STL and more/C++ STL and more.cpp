@@ -39,7 +39,9 @@ int main()
 	mySet.insertRandRange(inputs[0], inputs[1], inputs[2]);
 	mySet.printSet();
 
-
+	std::cout << "Enter an integer to search for MANUALLY." << std::endl;
+	std::cin >> searcVal;
+	mySet.manualSearch(searcVal);
 	delete[] inputs;
 }
 
