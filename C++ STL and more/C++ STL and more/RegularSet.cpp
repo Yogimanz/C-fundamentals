@@ -1,8 +1,7 @@
 #include "pch.h"
 #include "RegularSet.h"
-#include <set>
-#include <algorithm>
-#include <iostream>
+
+
 
 RegularSet::RegularSet()
 {
@@ -28,7 +27,10 @@ void RegularSet::printSet() const
 	for (auto value : Set)
 		std::cout << value << std::endl;
 }
-
+const std::set<int>::iterator RegularSet::getLastIter() const
+{
+	return Set.end();
+}
 RegularSet::~RegularSet()
 {
 }
