@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "RegularSet.h"
-
+#include <random>
 
 
 RegularSet::RegularSet()
@@ -30,6 +30,27 @@ void RegularSet::printSet() const
 const std::set<int>::iterator RegularSet::getLastIter() const
 {
 	return Set.end();
+}
+void RegularSet::insertRandRange(const int &numEle, const int &lowEnd, const int &highEnd)
+{
+	//check if the range inserted is invalid
+	if (numEle > 0)
+	{
+		for (int it = 0; it < numEle; it++)
+		{
+			// this random distribution will NOT be uniform
+			Set.insert(lowEnd + (std::rand() % (highEnd - lowEnd + 1)));
+		}
+		std::cout << "The set now contains: " << Set.size() << " elements." << std::endl;
+	}
+		
+
+	else
+		std::cout << "U've entered an invalid number of elements to insert into the set." << std::endl;
+}
+void RegularSet::manualSearch(const int &) const
+{
+
 }
 RegularSet::~RegularSet()
 {
