@@ -6,20 +6,24 @@ HashContainer::HashContainer()
 {
 }
 
-void HashContainer::insertSingle(std::pair<bool, int>) const
+void HashContainer::insertSingle(const myPair& value)
 {
+	HashTable.insert(value);
+
 }
 
-void HashContainer::insertRand(std::pair<bool, int>, int) const
+void HashContainer::insertRand(const int range) 
 {
+	for(int it=0; it < range; it++)
+	HashTable.insert(std::make_pair(rand()%2,rand()));
 }
 
-const int HashContainer::countInts(int) const
+const int HashContainer::countInts(const int) const
 {
 	return 0;
 }
 
-const int HashContainer::countBools(bool) const
+const int HashContainer::countBools(const bool) const
 {
 	return 0;
 }
