@@ -33,6 +33,21 @@ struct matchFirstFunctor
 		T compared;
 };
 
+template<typename T>
+struct matchSecondFunctor
+{
+	matchSecondFunctor(T const& t) : compared(t)
+	{}
+
+	template <typename U>
+	bool operator()(U const& pair)
+	{
+		return pair.second == compared;
+	}
+
+	T compared;
+};
+
 typedef std::pair<bool, int> myPair;
 class HashContainer
 {
@@ -40,6 +55,8 @@ private:
 	//2nd argument for hash table declaration is hash function we use to override regular one, in this case for hasing pairs of any type
 	//myPair is pair of bool and int
 	std::unordered_set<myPair, pair_hash> HashTable;
+	const std::unordered_set<myPair>::iterator getFirstIter() const;
+	const std::unordered_set<myPair>::iterator getLastIter() const;
 public:
 	HashContainer();
 	//insert single into table
@@ -50,8 +67,7 @@ public:
 	const int countInts(const int) const;
 	//count all found true or false booleans in pairs within table
 	const int countBools(const bool) const;
-	const std::unordered_set<myPair>::iterator getFirstIter() const;
-	const std::unordered_set<myPair>::iterator getLastIter() const;
+	
 	virtual ~HashContainer();
 };
 
