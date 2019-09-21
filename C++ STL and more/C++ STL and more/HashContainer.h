@@ -18,6 +18,21 @@ struct pair_hash
 	}
 };
 
+template<typename T>
+struct matchFirstFunctor
+{ 
+	matchFirstFunctor(T const& t) : compared(t)
+	{}
+
+	template <typename U>
+	bool operator()(U const& pair)
+	{
+		return pair.first == compared;
+	}
+
+		T compared;
+};
+
 typedef std::pair<bool, int> myPair;
 class HashContainer
 {
