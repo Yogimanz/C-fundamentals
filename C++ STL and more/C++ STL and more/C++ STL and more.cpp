@@ -27,7 +27,17 @@ int main()
 		myHashTable.insertSingle(std::pair<bool, int>(false, 15));
 		myHashTable.insertSingle(std::pair<bool, int>(true, 347));
 		myHashTable.insertSingle(std::pair<bool, int>(true, 28));
+		myHashTable.insertSingle(std::pair<bool, int>(true, 28));
+		myHashTable.insertSingle(std::pair<bool, int>(true, 28));
 		myHashTable.printTable();
+
+
+		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countBools(true) << std::endl;
+		//Returns 3.
+		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countInts(14) << std::endl;
+		//Returns 0 as it should.
+		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countInts(28) << std::endl;
+		//Returns 1, indicating that unordered set doesnt take in duplicates
 	}
 		break;
 	case 2:

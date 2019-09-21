@@ -18,6 +18,7 @@ struct pair_hash
 
 };
 
+//Functor used to compare first element within hash tables pairs(elements) - booleans in this case (in main)
 template<typename T>
 struct matchFirstFunctor
 { 
@@ -27,12 +28,14 @@ struct matchFirstFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
+		std::cout << "Call";
 		return pair.first == compared;
 	}
 
 		T compared;
 };
 
+//functor used to compare second element within hash tables pairs(elements) - integers in this case (in main)
 template<typename T>
 struct matchSecondFunctor
 {
@@ -42,6 +45,7 @@ struct matchSecondFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
+		std::cout << "Call";
 		return pair.second == compared;
 	}
 
@@ -64,9 +68,9 @@ public:
 	//insert random pairs into hash using argument as the amount of numbers inserted
 	void insertRand(const int&);
 	//count all found integers in pairs within table
-	const int countInts(const int&) const;
-	//count all found true or false booleans in pairs within table
 	const int countBools(const bool&) const;
+	//count all found true or false booleans in pairs within table
+	const int countInts(const int&) const;
 	void printTable();
 	virtual ~HashContainer();
 };
