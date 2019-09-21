@@ -1,7 +1,10 @@
 #pragma once
 #include <unordered_set>
 #include <algorithm>
-
+//hash function copied from https://www.boost.org/doc/libs/1_53_0/doc/html/hash/reference.html#boost.hash_combine
+template<typename T> void hash_combine(size_t & seed, T const& v) {
+	seed ^= stdext::hash_value(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+}
 
 struct pair_hash
 {
@@ -12,10 +15,7 @@ struct pair_hash
 		hash_combine(retval, rhs.second);
 		return retval;
 	}
-	//hash function copied from https://www.boost.org/doc/libs/1_53_0/doc/html/hash/reference.html#boost.hash_combine
-	template<typename T> void hash_combine(size_t & seed, T const& v) {
-		seed ^= stdext::hash_value(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
-	}
+
 };
 
 template<typename T>
@@ -67,7 +67,7 @@ public:
 	const int countInts(const int&) const;
 	//count all found true or false booleans in pairs within table
 	const int countBools(const bool&) const;
-	
+	void printTable();
 	virtual ~HashContainer();
 };
 

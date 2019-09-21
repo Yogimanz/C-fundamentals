@@ -1,7 +1,7 @@
 
 #include "pch.h"
 #include "RegularSet.h"
-
+#include "HashContainer.h"
 
 template< typename T >
 struct array_deleter
@@ -21,7 +21,13 @@ int main()
 	{
 	case 1:
 	{
-
+		HashContainer myHashTable;
+		
+		myHashTable.insertSingle(std::pair<bool, int> (true, 2));
+		myHashTable.insertSingle(std::pair<bool, int>(false, 15));
+		myHashTable.insertSingle(std::pair<bool, int>(true, 347));
+		myHashTable.insertSingle(std::pair<bool, int>(true, 28));
+		myHashTable.printTable();
 	}
 		break;
 	case 2:
@@ -71,7 +77,7 @@ int main()
 		std::cout <<"Insert either 1 or 2.\n";
 		break;
 	}
-
+	return 0;
 
 
 

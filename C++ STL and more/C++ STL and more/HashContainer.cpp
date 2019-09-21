@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "HashContainer.h"
-
+#include <iostream>
 
 HashContainer::HashContainer()
 {
@@ -26,6 +26,13 @@ const int HashContainer::countInts(const int& searchValue) const
 const int HashContainer::countBools(const bool& searchBool) const
 {
 	return std::count_if(getFirstIter(), getLastIter(), matchSecondFunctor<bool>(searchBool));
+}
+
+void HashContainer::printTable()
+{
+	for (auto it : HashTable)
+		std::cout << it.first << " + " << it.second << std::endl;
+
 }
 
 const std::unordered_set<myPair>::iterator HashContainer::getFirstIter() const
