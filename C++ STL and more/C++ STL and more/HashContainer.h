@@ -50,6 +50,8 @@ public:
 	const int countInts(const int) const;
 	//count all found true or false booleans in pairs within table
 	const int countBools(const bool) const;
+	const std::unordered_set<myPair>::iterator getFirstIter() const;
+	const std::unordered_set<myPair>::iterator getLastIter() const;
 	virtual ~HashContainer();
 };
 

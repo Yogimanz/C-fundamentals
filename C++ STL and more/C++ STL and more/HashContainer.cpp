@@ -28,6 +28,16 @@ const int HashContainer::countBools(const bool) const
 	return 0;
 }
 
+const std::unordered_set<myPair>::iterator HashContainer::getFirstIter() const
+{
+	return HashTable.end();
+}
+
+const std::unordered_set<myPair>::iterator HashContainer::getLastIter() const
+{
+	return HashTable.begin();
+}
+
 
 HashContainer::~HashContainer()
 {
