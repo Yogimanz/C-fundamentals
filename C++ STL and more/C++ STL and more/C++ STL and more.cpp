@@ -8,6 +8,7 @@ struct array_deleter
 {
 	void operator ()(T const * p)
 	{
+		std::cout << "Deleter invoked.\n";
 		delete[] p;
 	}
 };

@@ -48,4 +48,5 @@ const std::unordered_set<myPair>::iterator HashContainer::getLastIter() const
 
 HashContainer::~HashContainer()
 {
+	std::cout << "Hash table deleted. \n";
 }

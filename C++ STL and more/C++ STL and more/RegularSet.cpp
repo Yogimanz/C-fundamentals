@@ -91,4 +91,5 @@ void RegularSet::manualSearch(const int &value) const
 }
 RegularSet::~RegularSet()
 {
+	std::cout<<"Regular Set deleted.\n";
 }
