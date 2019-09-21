@@ -12,18 +12,18 @@ void HashContainer::insertSingle(const myPair& value)
 
 }
 
-void HashContainer::insertRand(const int range) 
+void HashContainer::insertRand(const int& range) 
 {
 	for(int it=0; it < range; it++)
 	HashTable.insert(std::make_pair(rand()%2,rand()));
 }
 
-const int HashContainer::countInts(const int searchValue) const
+const int HashContainer::countInts(const int& searchValue) const
 {
 	return std::count_if(getFirstIter(), getLastIter(), matchFirstFunctor<int>(searchValue));
 }
 
-const int HashContainer::countBools(const bool searchBool) const
+const int HashContainer::countBools(const bool& searchBool) const
 {
 	return std::count_if(getFirstIter(), getLastIter(), matchSecondFunctor<bool>(searchBool));
 }

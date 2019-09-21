@@ -62,11 +62,11 @@ public:
 	//insert single into table
 	void insertSingle(const myPair&);
 	//insert random pairs into hash using argument as the amount of numbers inserted
-	void insertRand(const int);
+	void insertRand(const int&);
 	//count all found integers in pairs within table
-	const int countInts(const int) const;
+	const int countInts(const int&) const;
 	//count all found true or false booleans in pairs within table
-	const int countBools(const bool) const;
+	const int countBools(const bool&) const;
 	
 	virtual ~HashContainer();
 };
