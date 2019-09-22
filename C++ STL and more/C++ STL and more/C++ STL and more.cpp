@@ -41,6 +41,7 @@ int main()
 		//Returns 1, indicating that unordered set doesnt take in duplicates
 
 		if (myHashTable.findPairWithBool(true))
+			//finds after single search indicated with "Call" prints from functor
 			std::cout << "There is a pair with boolean value true. \n";
 		else
 			std::cout << "None of the pairs in container have their boolean value as true. \n";
@@ -48,8 +49,13 @@ int main()
 		if (myHashTable.findPairWithInt(12))
 			std::cout << "There is a pair with int value 12. \n";
 		else
+			//Attempts several searches and doesnt find a result
 			std::cout << "None of the pairs in container have their int value as 12. \n";
 
+		if (myHashTable.findPair(std::make_pair(true,28)))
+			std::cout << "There is a pair with int value 28 and bool value true. \n";
+		else
+			std::cout << "None of the pairs in container have their int value as 12. \n";
 	}
 		break;
 	case 2:

@@ -41,6 +41,12 @@ const bool HashContainer::findPairWithBool(const bool &searchValue) const
 	return result != getLastIter();
 }
 
+const bool HashContainer::findPair(const std::pair<bool, int>& searchPair) const
+{
+	auto result=std::find(getFirstIter(), getLastIter(), searchPair);
+	return result != getLastIter();
+}
+
 void HashContainer::printTable()
 {
 	for (auto it : HashTable)

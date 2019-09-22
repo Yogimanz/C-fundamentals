@@ -29,7 +29,7 @@ struct matchFirstFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
-		std::cout << "Call";
+		std::cout << "Call \n";
 		return pair.first == compared;
 	}
 
@@ -46,7 +46,7 @@ struct matchSecondFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
-		std::cout << "Call";
+		std::cout << "Call \n";
 		return pair.second == compared;
 	}
 
@@ -75,6 +75,7 @@ public:
 
 	const bool findPairWithInt(const int&) const;
 	const bool findPairWithBool(const bool&) const;
+	const bool findPair(const std::pair<bool,int>&) const;
 	void printTable();
 	virtual ~HashContainer();
 };
