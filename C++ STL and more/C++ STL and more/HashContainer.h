@@ -29,7 +29,7 @@ struct matchFirstFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
-		std::cout << "Call \n";
+		std::cout << "Call functor for first value of pair for comparison.\n";
 		return pair.first == compared;
 	}
 
@@ -46,7 +46,7 @@ struct matchSecondFunctor
 	template <typename U>
 	bool operator()(U const& pair)
 	{
-		std::cout << "Call \n";
+		std::cout << "Call functor for second value of pair for comparison \n";
 		return pair.second == compared;
 	}
 
@@ -73,9 +73,13 @@ public:
 	//count all found true or false booleans in pairs within table
 	const int countInts(const int&) const;
 
+	//find single pair with its int value as argument
 	const bool findPairWithInt(const int&) const;
+	//find single pair with its bool value as argument
 	const bool findPairWithBool(const bool&) const;
+	//find single pair within hash table with a new pair as argument
 	const bool findPair(const std::pair<bool,int>&) const;
+	//print all pairs within table
 	void printTable();
 	virtual ~HashContainer();
 };

@@ -46,10 +46,11 @@ int main()
 		else
 			std::cout << "None of the pairs in container have their boolean value as true. \n";
 
-		if (myHashTable.findPairWithInt(12))
-			std::cout << "There is a pair with int value 12. \n";
+		if (myHashTable.findPairWithInt(15))
+			//finds after single search using hash table to target specific bucket
+			std::cout << "There is a pair with int value 15. \n";
 		else
-			//Attempts several searches and doesnt find a result
+			
 			std::cout << "None of the pairs in container have their int value as 12. \n";
 
 		if (myHashTable.findPair(std::make_pair(true,28)))
