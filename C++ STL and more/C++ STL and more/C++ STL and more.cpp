@@ -39,6 +39,17 @@ int main()
 		//Returns 0 as it should.
 		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countInts(28) << std::endl;
 		//Returns 1, indicating that unordered set doesnt take in duplicates
+
+		if (myHashTable.findPairWithBool(true))
+			std::cout << "There is a pair with boolean value true. \n";
+		else
+			std::cout << "None of the pairs in container have their boolean value as true. \n";
+
+		if (myHashTable.findPairWithInt(12))
+			std::cout << "There is a pair with int value 12. \n";
+		else
+			std::cout << "None of the pairs in container have their int value as 12. \n";
+
 	}
 		break;
 	case 2:

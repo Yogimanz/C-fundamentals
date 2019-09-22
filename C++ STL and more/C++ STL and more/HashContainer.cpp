@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "HashContainer.h"
 #include <iostream>
-
+#include <utility>
 HashContainer::HashContainer()
 {
 }
@@ -28,14 +28,17 @@ const int HashContainer::countInts(const int& searchValue) const
 	return std::count_if(getFirstIter(), getLastIter(), matchSecondFunctor<int>(searchValue));
 }
 
-const int HashContainer::findPairWithInt(const int &) const
+const bool HashContainer::findPairWithInt(const int &searchValue) const
 {
-	return 0;
+	auto result = std::find_if(getFirstIter(), getLastIter(), matchSecondFunctor<int>(searchValue));
+
+	return result != getLastIter();
 }
 
-const bool HashContainer::findPairWithBool(const bool &) const
+const bool HashContainer::findPairWithBool(const bool &searchValue) const
 {
-	return false;
+	auto result = std::find_if(getFirstIter(), getLastIter(), matchFirstFunctor<bool>(searchValue));
+	return result != getLastIter();
 }
 
 void HashContainer::printTable()

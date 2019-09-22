@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_set>
 #include <algorithm>
+
 //hash function copied from https://www.boost.org/doc/libs/1_53_0/doc/html/hash/reference.html#boost.hash_combine
 template<typename T> void hash_combine(size_t & seed, T const& v) {
 	seed ^= stdext::hash_value(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
@@ -72,7 +73,7 @@ public:
 	//count all found true or false booleans in pairs within table
 	const int countInts(const int&) const;
 
-	const int findPairWithInt(const int&) const;
+	const bool findPairWithInt(const int&) const;
 	const bool findPairWithBool(const bool&) const;
 	void printTable();
 	virtual ~HashContainer();
