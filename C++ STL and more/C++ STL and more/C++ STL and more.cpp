@@ -22,6 +22,7 @@ int main()
 	{
 	case 1:
 	{
+		// this case is entierly hardcoded, could be easily changed to work with user input.
 		HashContainer myHashTable;
 		
 		myHashTable.insertSingle(std::pair<bool, int> (true, 2));
@@ -33,30 +34,30 @@ int main()
 		myHashTable.printTable();
 
 
-		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countBools(true) << std::endl;
+		std::cout << "Number of elements countaining true as first pair value (boolean)\n " << myHashTable.countBools(true) << std::endl;
 		//Returns 3.
-		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countInts(14) << std::endl;
+		std::cout << "Number of elements countaining true as first pair value (boolean) \n" << myHashTable.countInts(14) << std::endl;
 		//Returns 0 as it should.
-		std::cout << "Number of elements countaining true as first pair value (boolean) " << myHashTable.countInts(28) << std::endl;
+		std::cout << "Number of elements countaining true as first pair value (boolean)\n " << myHashTable.countInts(28) << std::endl;
 		//Returns 1, indicating that unordered set doesnt take in duplicates
 
 		if (myHashTable.findPairWithBool(true))
 			//finds after single search indicated with "Call" prints from functor
-			std::cout << "There is a pair with boolean value true. \n";
+			std::cout << "There is a pair with boolean value true. \n\n";
 		else
-			std::cout << "None of the pairs in container have their boolean value as true. \n";
+			std::cout << "None of the pairs in container have their boolean value as true.\n \n";
 
 		if (myHashTable.findPairWithInt(15))
 			//finds after single search using hash table to target specific bucket
-			std::cout << "There is a pair with int value 15. \n";
+			std::cout << "There is a pair with int value 15. \n\n";
 		else
 			
-			std::cout << "None of the pairs in container have their int value as 12. \n";
+			std::cout << "None of the pairs in container have their int value as 12. \n\n";
 
 		if (myHashTable.findPair(std::make_pair(true,28)))
-			std::cout << "There is a pair with int value 28 and bool value true. \n";
+			std::cout << "There is a pair with int value 28 and bool value true. \n\n";
 		else
-			std::cout << "None of the pairs in container have their int value as 12. \n";
+			std::cout << "None of the pairs in container have their int value as 12. \n\n";
 	}
 		break;
 	case 2:
