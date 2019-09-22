@@ -28,6 +28,16 @@ const int HashContainer::countInts(const int& searchValue) const
 	return std::count_if(getFirstIter(), getLastIter(), matchSecondFunctor<int>(searchValue));
 }
 
+const int HashContainer::findPairWithInt(const int &) const
+{
+	return 0;
+}
+
+const bool HashContainer::findPairWithBool(const bool &) const
+{
+	return false;
+}
+
 void HashContainer::printTable()
 {
 	for (auto it : HashTable)

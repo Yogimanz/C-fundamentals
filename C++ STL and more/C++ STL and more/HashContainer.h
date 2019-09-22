@@ -71,6 +71,9 @@ public:
 	const int countBools(const bool&) const;
 	//count all found true or false booleans in pairs within table
 	const int countInts(const int&) const;
+
+	const int findPairWithInt(const int&) const;
+	const bool findPairWithBool(const bool&) const;
 	void printTable();
 	virtual ~HashContainer();
 };
