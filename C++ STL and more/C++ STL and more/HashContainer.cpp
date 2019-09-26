@@ -15,7 +15,7 @@ void HashContainer::insertSingle(const myPair& value)
 void HashContainer::insertRand(const int& range) 
 {
 	for(int it=0; it < range; it++)
-	HashTable.insert(std::make_pair(rand()%2,rand()));
+	HashTable.insert(std::make_pair(rand()%2,rand()%100));
 }
 
 const int HashContainer::countBools(const bool& searchValue) const
