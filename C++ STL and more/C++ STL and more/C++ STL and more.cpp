@@ -17,7 +17,7 @@ struct array_deleter
 int main()
 {
 	int choice;
-	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements." << std::endl;
+	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements. \n 4 for Set performance." << std::endl;
 	std::cin >> choice;
 	switch (choice)
 	{
@@ -122,8 +122,28 @@ int main()
 			std::cout << "None of the pairs in container have their int value as 99 and true bool. \n\n";
 	}
 	break;
+	case 4:
+	{
+		RegularSet mySet;
+		//SimpleClock is simple yet pointless for this example RAII which will measure time as long as it lives in this scope.
+		SimpleClock clock3;
+		
+		//Measuring speed for 100k insertions and two simple searches for hardcoded numbers.
+		mySet.insertRandRange(100000, 1, 100000);
+		auto result = mySet.searchSet(1235);
+		if ( result != mySet.getLastIter())
+			std::cout << "Element 1235 was found." << std::endl;
+		else
+			std::cout << "Element 1235 was not found." << std::endl;
+		{
+			SimpleClock clock4;
+			mySet.manualSearch(2345);
+		}
+		
+	}
+	break;
 	default: 
-		std::cout <<"Insert either 1 ,2 or 3.\n";
+		std::cout <<"Insert either 1 ,2, 3 or 4.\n";
 		break;
 	}
 	return 0;
