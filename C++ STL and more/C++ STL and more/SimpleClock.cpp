@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "SimpleClock.h"
-#include <time.h>
 #include <iostream>
 
 SimpleClock::SimpleClock()

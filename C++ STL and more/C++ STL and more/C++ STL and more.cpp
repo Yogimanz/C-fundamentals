@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "RegularSet.h"
 #include "HashContainer.h"
+#include "SimpleClock.h"
 
 template< typename T >
 struct array_deleter
@@ -16,7 +17,7 @@ struct array_deleter
 int main()
 {
 	int choice;
-	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set." << std::endl;
+	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements." << std::endl;
 	std::cin >> choice;
 	switch (choice)
 	{
@@ -24,7 +25,8 @@ int main()
 	{
 		// this case is entierly hardcoded, could be easily changed to work with user input.
 		HashContainer myHashTable;
-		
+		//SimpleClock is simple yet pointless for this example RAII which will measure time as long as it lives in this scope.
+		SimpleClock clock1;
 		myHashTable.insertSingle(std::pair<bool, int> (true, 2));
 		myHashTable.insertSingle(std::pair<bool, int>(false, 15));
 		myHashTable.insertSingle(std::pair<bool, int>(true, 347));
@@ -57,7 +59,7 @@ int main()
 		if (myHashTable.findPair(std::make_pair(true,28)))
 			std::cout << "There is a pair with int value 28 and bool value true. \n\n";
 		else
-			std::cout << "None of the pairs in container have their int value as 12. \n\n";
+			std::cout << "None of the pairs in container have their int value as 28. \n\n";
 	}
 		break;
 	case 2:
@@ -103,8 +105,25 @@ int main()
 	}
 		
 		break;
+	case 3:
+	{
+		HashContainer hash;
+		//SimpleClock is simple yet pointless for this example RAII which will measure time as long as it lives in this scope.
+		SimpleClock clock3;
+		//Measuring speed for milion isertions and two simple searches for hardcoded pairs.
+		hash.insertRand(1000000);
+		if (hash.findPair(std::make_pair(false, 56)))
+			std::cout << "There is a pair with int value 56 and bool value false. \n\n";
+		else
+			std::cout << "None of the pairs in container have their int value as 56 and false bool. \n\n";
+		if (hash.findPair(std::make_pair(true, 99)))
+			std::cout << "There is a pair with int value 99 and bool value true. \n\n";
+		else
+			std::cout << "None of the pairs in container have their int value as 99 and true bool. \n\n";
+	}
+	break;
 	default: 
-		std::cout <<"Insert either 1 or 2.\n";
+		std::cout <<"Insert either 1 ,2 or 3.\n";
 		break;
 	}
 	return 0;
