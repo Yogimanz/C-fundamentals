@@ -7,5 +7,6 @@ class SimpleClock
 public:
 	SimpleClock();
 	~SimpleClock();
+
 };
 

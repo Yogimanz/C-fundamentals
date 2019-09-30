@@ -12,3 +12,4 @@ SimpleClock::~SimpleClock()
 {
 	std::cout << "Elapsed clock clicks: " << Time << " and " << (float)Time / CLOCKS_PER_SEC << " seconds " << std::endl;
 }
+
