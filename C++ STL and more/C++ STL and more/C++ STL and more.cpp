@@ -3,6 +3,7 @@
 #include "RegularSet.h"
 #include "HashContainer.h"
 #include "SimpleClock.h"
+#include "VectorClass.h"
 
 template< typename T >
 struct array_deleter
@@ -17,7 +18,7 @@ struct array_deleter
 int main()
 {
 	int choice;
-	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements. \n 4 for Set performance." << std::endl;
+	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements. \n 4 for Set performance or 5 for finding smallest positive number inside vector." << std::endl;
 	std::cin >> choice;
 	switch (choice)
 	{
@@ -142,8 +143,16 @@ int main()
 		
 	}
 	break;
+	case 5:
+	{
+		std::vector<int> TestVector = { -1,5,-12,3,2,1,0,7,4 }; //smallest missing will be 6
+		VectorClass Vecty;
+		int result = Vecty.smallestPositiveMissing(TestVector);
+		std::cout << "Smallest missing positive number is: " << result << std::endl; // prints out 6
+	}
+	break;
 	default: 
-		std::cout <<"Insert either 1 ,2, 3 or 4.\n";
+		std::cout <<"Insert either 1 ,2, 3, 4 or 5.\n";
 		break;
 	}
 	return 0;
