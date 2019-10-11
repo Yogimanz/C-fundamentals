@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="HashContainer.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RegularSet.h" />
     <ClInclude Include="SimpleClock.h" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="C++ STL and more.cpp" />
     <ClCompile Include="HashContainer.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
