@@ -54,7 +54,7 @@ void LinkedList::AddNodeAT(int value, int index)
 				
 			else
 			{
-				std::cout << "Index out of range, adding element to the end of the List." << std::endl;
+				std::cout << "Index " <<index<< " out of range, adding element to the end of the List." << std::endl;
 				AddNode(value);
 				break;
 			}
@@ -89,6 +89,17 @@ void LinkedList::DeleteElementAt(int index)
 
 void LinkedList::ReverseList()
 {
+	struct node* current = head;
+	struct node* previous = NULL;
+	struct node* next = NULL;
+	while (current != NULL)
+	{
+		next = current->next;		
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	head = previous;
 }
 
 void LinkedList::PrintList()

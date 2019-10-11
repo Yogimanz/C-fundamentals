@@ -166,6 +166,9 @@ int main()
 		// add element at index 2
 		List.AddNodeAT(9, 2);
 		List.PrintList();
+		// Reversing the list
+		List.ReverseList();
+		List.PrintList();
 		
 	}
 	break;
