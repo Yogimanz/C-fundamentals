@@ -4,6 +4,7 @@
 #include "HashContainer.h"
 #include "SimpleClock.h"
 #include "VectorClass.h"
+#include "LinkedList.h"
 
 template< typename T >
 struct array_deleter
@@ -149,6 +150,23 @@ int main()
 		VectorClass Vecty;
 		int result = Vecty.smallestPositiveMissing(TestVector);
 		std::cout << "Smallest missing positive number is: " << result << std::endl; // prints out 6
+	}
+	break;
+	case 6:
+	{
+		LinkedList List;
+		List.AddNode(3);
+		List.AddNode(5);
+		List.AddNode(7);
+		List.AddElementAtFront(1);
+		// add at start
+		List.AddNodeAT(4, 0);
+		// add at end
+		List.AddNodeAT(11, 15);
+		// add element at index 2
+		List.AddNodeAT(9, 2);
+		List.PrintList();
+		
 	}
 	break;
 	default: 
