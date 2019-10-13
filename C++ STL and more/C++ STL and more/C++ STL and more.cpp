@@ -159,14 +159,19 @@ int main()
 		List.AddNode(5);
 		List.AddNode(7);
 		List.AddElementAtFront(1);
-		// add at start
+		// add 4 at start
 		List.AddNodeAT(4, 0);
-		// add at end
+		// add 11 at end
 		List.AddNodeAT(11, 15);
-		// add element at index 2
+		// add 9 at index 2
 		List.AddNodeAT(9, 2);
 		List.PrintList();
-		// Reversing the list
+		// remove 9,1,11 and first element 4
+		List.DeleteElement(9);
+		List.DeleteElement(1);
+		List.DeleteElement(11);
+		List.DeleteElement(4);
+		//Reverse list, 3 elements expected to remain
 		List.ReverseList();
 		List.PrintList();
 		

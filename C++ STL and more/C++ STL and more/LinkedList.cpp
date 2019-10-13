@@ -76,11 +76,33 @@ void LinkedList::AddElementAtFront(int value)
 	newNode->data = value;
 	newNode->next = head;
 	head = newNode;
+	
 }
 
 
 void LinkedList::DeleteElement(int value)
 {
+	struct node* current = head;
+	struct node* previous = NULL;
+	while (current != NULL && current->data != value)
+	{
+		previous = current;
+		current = current->next;
+	}
+
+	if (current != NULL)
+	{
+
+		if (current == head)
+		{
+			head = head->next;
+			
+		}
+		else
+		previous->next = current->next;
+		delete current;
+	}
+
 }
 
 void LinkedList::DeleteElementAt(int index)
@@ -94,11 +116,17 @@ void LinkedList::ReverseList()
 	struct node* next = NULL;
 	while (current != NULL)
 	{
-		next = current->next;		
+		//move next ahead of current
+		next = current->next;	
+		//point current to previous, this is the place where elements point in the other direction
 		current->next = previous;
+		//advance previous to current
 		previous = current;
+		//advance current to next
 		current = next;
 	}
+	//at the end make head point to previous of current which will be the last element of old List
+	//or first elemenent of new reversed list
 	head = previous;
 }
 
