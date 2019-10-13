@@ -6,6 +6,7 @@
 #include "VectorClass.h"
 #include "LinkedList.h"
 
+
 template< typename T >
 struct array_deleter
 {
@@ -19,7 +20,8 @@ struct array_deleter
 int main()
 {
 	int choice;
-	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements. \n 4 for Set performance or 5 for finding smallest positive number inside vector." << std::endl;
+	std::cout << "Insert 1 to work with Hash Container, 2 to work with Set, 3 to test out performance of Hash container on 1m elements."
+		<< "\n 4 for Set performance, 5 for finding smallest positive number inside vector or 6 to use Lists." << std::endl;
 	std::cin >> choice;
 	switch (choice)
 	{
@@ -178,7 +180,7 @@ int main()
 	}
 	break;
 	default: 
-		std::cout <<"Insert either 1 ,2, 3, 4 or 5.\n";
+		std::cout <<"Insert either 1 ,2, 3, 4, 5 or 6.\n";
 		break;
 	}
 	return 0;
